@@ -687,3 +687,103 @@ duration:1200
 });
 
 },1500);
+
+// ===============================
+// MUSIC PLAYER
+// ===============================
+
+const progressBar=document.getElementById("progressBar");
+
+const volume=document.getElementById("volume");
+
+const muteBtn=document.getElementById("muteBtn");
+
+music.volume=1;
+
+volume.oninput=()=>{
+
+music.volume=volume.value;
+
+};
+
+muteBtn.onclick=()=>{
+
+music.muted=!music.muted;
+
+muteBtn.innerHTML=music.muted?"🔇":"🔊";
+
+};
+
+music.addEventListener("timeupdate",()=>{
+
+const percent=(music.currentTime/music.duration)*100;
+
+progressBar.style.width=percent+"%";
+
+});
+
+// ===============================
+// FIREWORKS
+// ===============================
+
+function fireworks(){
+
+for(let i=0;i<80;i++){
+
+const fw=document.createElement("div");
+
+fw.className="firework";
+
+fw.style.left=Math.random()*100+"vw";
+
+fw.style.top=Math.random()*100+"vh";
+
+fw.style.background=`hsl(${Math.random()*360},100%,70%)`;
+
+fw.style.setProperty("--x",(Math.random()*300-150)+"px");
+
+fw.style.setProperty("--y",(Math.random()*300-150)+"px");
+
+document.body.appendChild(fw);
+
+setTimeout(()=>{
+
+fw.remove();
+
+},1500);
+
+}
+
+}
+
+
+// ===============================
+// FINAL SECTION
+// ===============================
+
+const endSection=document.querySelector(".final-section");
+
+const endObserver=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+fireworks();
+
+celebrate();
+
+}
+
+});
+
+},{threshold:.7});
+
+endObserver.observe(endSection);
+
+
+// ===============================
+// END
+// ===============================
+
+console.log("❤️ Premium Website Loaded ❤️");

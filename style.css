@@ -1265,3 +1265,103 @@ transform:scale(1.05);
 transition:1s;
 
 }
+
+/* ==========================
+   BALLOON FLY
+========================== */
+
+.balloon.fly{
+
+animation:flyAway 3s forwards ease-in;
+
+}
+
+@keyframes flyAway{
+
+0%{
+
+transform:translateY(0) scale(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(.3);
+
+opacity:0;
+
+}
+
+}
+
+
+/* ==========================
+   HEART EXPLOSION
+========================== */
+
+.heart.open{
+
+animation:heartOpen 1s forwards;
+
+}
+
+@keyframes heartOpen{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.6);
+
+filter:drop-shadow(0 0 35px #ff5f97);
+
+}
+
+100%{
+
+transform:scale(0);
+
+opacity:0;
+
+}
+
+}
+
+
+/* ==========================
+   MUSIC BUTTON
+========================== */
+
+.music-playing{
+
+animation:musicPulse 1s infinite;
+
+}
+
+@keyframes musicPulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}

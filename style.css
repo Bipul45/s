@@ -1215,3 +1215,53 @@ opacity:0;
 }
 
 }
+
+/* ==========================
+   SCROLL ANIMATIONS
+========================== */
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:all 1s ease;
+
+}
+
+.fade-up.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.zoom-in{
+
+opacity:0;
+
+transform:scale(.85);
+
+transition:all .9s ease;
+
+}
+
+.zoom-in.show{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+.hero.fade{
+
+opacity:0;
+
+transform:scale(1.05);
+
+transition:1s;
+
+}

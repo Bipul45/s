@@ -1427,3 +1427,23 @@ transform:scale(.96);
 transition:transform .3s linear;
 
 }
+
+.cursor{
+
+animation:blink .8s infinite;
+
+color:#ff5b94;
+
+font-weight:bold;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}

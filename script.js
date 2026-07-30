@@ -521,3 +521,52 @@ if(current<0) current=photos.length-1;
 showImage();
 
 };
+
+// ===============================
+// PREMIUM SCROLL REVEAL
+// ===============================
+
+const revealItems=document.querySelectorAll(
+
+".timeline-card,.photo,.letter,.quote,.typing,.music-section,.gift-section,.final-section"
+
+);
+
+const revealObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:.25});
+
+revealItems.forEach(item=>{
+
+item.classList.add("fade-up");
+
+revealObserver.observe(item);
+
+});
+
+
+// ===============================
+// HERO FADE
+// ===============================
+
+window.addEventListener("scroll",()=>{
+
+const hero=document.querySelector(".hero");
+
+const y=window.scrollY;
+
+hero.style.opacity=1-(y/450);
+
+hero.style.transform=`scale(${1+y/5000})`;
+
+});

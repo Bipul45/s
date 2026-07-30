@@ -1,0 +1,1205 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#0c0007;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#14000b;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff4f87;
+
+border-radius:20px;
+
+}
+
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+body{
+
+background:
+
+radial-gradient(circle at top,#420018,#120007,#050003);
+
+background-attachment:fixed;
+
+}
+
+
+/* ==========================
+   SECTION
+========================== */
+
+section{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:80px 25px;
+
+position:relative;
+
+}
+
+.container{
+
+width:100%;
+
+max-width:900px;
+
+text-align:center;
+
+}
+
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+h1{
+
+font-size:48px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+font-size:34px;
+
+margin-bottom:18px;
+
+}
+
+p{
+
+font-size:19px;
+
+line-height:1.9;
+
+opacity:.9;
+
+}
+
+.subtitle{
+
+font-size:22px;
+
+color:#ff89b2;
+
+margin-bottom:25px;
+
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+height:100vh;
+
+overflow:hidden;
+
+}
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+to bottom,
+
+rgba(0,0,0,.3),
+
+rgba(0,0,0,.75)
+
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+}
+
+
+/* ==========================
+   BALLOON
+========================== */
+
+.balloon{
+
+font-size:110px;
+
+margin-bottom:30px;
+
+animation:
+
+floatBalloon 4s ease-in-out infinite;
+
+}
+
+@keyframes floatBalloon{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-30px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   BUTTON
+========================== */
+
+button{
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f87;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+margin-top:30px;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:scale(1.07);
+
+box-shadow:
+
+0 0 30px
+
+rgba(255,80,130,.45);
+
+}
+
+
+/* ==========================
+   HEART
+========================== */
+
+.heart{
+
+font-size:110px;
+
+animation:heartbeat 1.2s infinite;
+
+}
+
+@keyframes heartbeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.18);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.heart-container{
+
+text-align:center;
+
+}
+
+
+/* ==========================
+   SCROLL INDICATOR
+========================== */
+
+.scroll-indicator{
+
+margin-top:70px;
+
+font-size:17px;
+
+letter-spacing:3px;
+
+opacity:.75;
+
+animation:
+
+bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(12px);
+
+}
+
+}
+
+/* ==========================
+   GLASS EFFECT
+========================== */
+
+.timeline-card,
+.letter,
+.photo,
+#giftBox{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border-radius:24px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+
+/* ==========================
+   QUOTE
+========================== */
+
+blockquote{
+
+font-size:28px;
+
+font-style:italic;
+
+line-height:1.8;
+
+color:#ffd5e4;
+
+max-width:750px;
+
+margin:auto;
+
+}
+
+
+/* ==========================
+   TYPING
+========================== */
+
+.typing{
+
+text-align:center;
+
+}
+
+#typingText{
+
+font-size:22px;
+
+line-height:2;
+
+max-width:850px;
+
+margin:auto;
+
+white-space:pre-wrap;
+
+color:#ffe8ef;
+
+}
+
+#typingText::after{
+
+content:"|";
+
+animation:cursor .7s infinite;
+
+}
+
+@keyframes cursor{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+
+/* ==========================
+   TIMELINE
+========================== */
+
+.timeline{
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.timeline-card{
+
+padding:30px;
+
+transition:.4s;
+
+}
+
+.timeline-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 50px rgba(255,90,150,.35);
+
+}
+
+.timeline-card h2{
+
+margin-bottom:12px;
+
+color:#ff7ba7;
+
+}
+
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+margin-top:50px;
+
+}
+
+.photo{
+
+overflow:hidden;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+.photo img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.photo:hover{
+
+transform:translateY(-10px);
+
+}
+
+.photo:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+/* ==========================
+   LETTER
+========================== */
+
+.letter{
+
+padding:40px;
+
+margin-top:40px;
+
+text-align:left;
+
+}
+
+.letter p{
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+
+/* ==========================
+   GIFT
+========================== */
+
+#giftBox{
+
+width:180px;
+
+height:180px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:90px;
+
+margin:50px auto;
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+#giftBox:hover{
+
+transform:scale(1.08) rotate(5deg);
+
+}
+
+#giftText{
+
+font-size:20px;
+
+margin-top:20px;
+
+}
+
+
+/* ==========================
+   MUSIC
+========================== */
+
+.music-section button{
+
+margin-top:40px;
+
+}
+
+
+/* ==========================
+   FINAL
+========================== */
+
+.final-title{
+
+font-size:75px;
+
+font-family:'Great Vibes',cursive;
+
+color:#ff6f9d;
+
+animation:loveBeat 1.5s infinite;
+
+}
+
+@keyframes loveBeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+font-size:18px;
+
+background:#15000a;
+
+color:#ff8db5;
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:34px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+p{
+
+font-size:17px;
+
+}
+
+blockquote{
+
+font-size:22px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.photo img{
+
+height:280px;
+
+}
+
+.final-title{
+
+font-size:55px;
+
+}
+
+.letter{
+
+padding:25px;
+
+}
+
+}
+
+/* ==========================
+   FLOATING HEARTS
+========================== */
+
+.floating-heart{
+
+position:fixed;
+
+bottom:-50px;
+
+pointer-events:none;
+
+font-size:24px;
+
+z-index:999;
+
+animation:heartFloat linear forwards;
+
+opacity:.9;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(0) scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.8);
+
+opacity:0;
+
+}
+
+}
+
+
+/* ==========================
+   STARS
+========================== */
+
+.star{
+
+position:fixed;
+
+width:3px;
+
+height:3px;
+
+background:#fff;
+
+border-radius:50%;
+
+opacity:.4;
+
+animation:twinkle 2.5s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(2);
+
+}
+
+}
+
+
+/* ==========================
+   SECTION REVEAL
+========================== */
+
+.section{
+
+opacity:0;
+
+transform:translateY(100px);
+
+transition:1.2s ease;
+
+}
+
+.section.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+/* ==========================
+   GLOW
+========================== */
+
+h1,h2{
+
+text-shadow:
+
+0 0 15px rgba(255,90,140,.25);
+
+}
+
+button{
+
+box-shadow:
+
+0 0 25px rgba(255,80,120,.35);
+
+}
+
+.photo:hover{
+
+box-shadow:
+
+0 20px 50px rgba(255,80,130,.4);
+
+}
+
+
+/* ==========================
+   SCROLL DOWN
+========================== */
+
+.scroll-indicator{
+
+font-weight:600;
+
+color:#ffc6da;
+
+text-transform:uppercase;
+
+}
+
+.scroll-indicator::after{
+
+content:"";
+
+display:block;
+
+width:2px;
+
+height:45px;
+
+background:#ff5d92;
+
+margin:10px auto 0;
+
+animation:scrollLine 1.6s infinite;
+
+}
+
+@keyframes scrollLine{
+
+0%{
+
+height:10px;
+
+opacity:.3;
+
+}
+
+50%{
+
+height:45px;
+
+opacity:1;
+
+}
+
+100%{
+
+height:10px;
+
+opacity:.3;
+
+}
+
+}
+
+
+/* ==========================
+   PHOTO ANIMATION
+========================== */
+
+.photo{
+
+animation:zoomCard 6s ease-in-out infinite;
+
+}
+
+@keyframes zoomCard{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.02);
+
+}
+
+}
+
+
+/* ==========================
+   FINAL BACKGROUND
+========================== */
+
+.final-section{
+
+background:
+
+radial-gradient(circle,#2d0012,#120007,#060003);
+
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================
+   SELECTION
+========================== */
+
+::selection{
+
+background:#ff5f97;
+
+color:white;
+
+}
+
+
+/* ==========================
+   SMOOTH IMAGE
+========================== */
+
+img{
+
+user-select:none;
+
+-webkit-user-drag:none;
+
+}
+
+
+/* ==========================
+   EXTRA MOBILE
+========================== */
+
+@media(max-width:600px){
+
+section{
+
+padding:70px 18px;
+
+}
+
+#giftBox{
+
+width:140px;
+
+height:140px;
+
+font-size:70px;
+
+}
+
+.balloon{
+
+font-size:80px;
+
+}
+
+.heart{
+
+font-size:85px;
+
+}
+
+}
+
+/* ==========================
+LIGHTBOX
+========================== */
+
+#lightbox{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.96);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:999999;
+
+}
+
+#lightbox.active{
+
+display:flex;
+
+animation:fadeIn .4s;
+
+}
+
+#lightbox img{
+
+max-width:92%;
+
+max-height:80%;
+
+border-radius:20px;
+
+box-shadow:0 0 40px rgba(255,80,130,.35);
+
+}
+
+#closeLightbox{
+
+position:absolute;
+
+top:20px;
+
+right:25px;
+
+font-size:34px;
+
+cursor:pointer;
+
+}
+
+.lightbox-nav{
+
+position:absolute;
+
+bottom:40px;
+
+display:flex;
+
+gap:20px;
+
+}
+
+.lightbox-nav button{
+
+font-size:24px;
+
+padding:15px 22px;
+
+}
+
+/* ==========================
+   GIFT SURPRISE
+========================== */
+
+#giftSurprise{
+
+display:none;
+
+margin-top:40px;
+
+padding:30px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:25px;
+
+backdrop-filter:blur(18px);
+
+animation:giftFade .8s ease;
+
+}
+
+#giftSurprise.show{
+
+display:block;
+
+}
+
+@keyframes giftFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px) scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+
+/* Gift Glow */
+
+#giftBox{
+
+box-shadow:
+
+0 0 30px rgba(255,70,120,.25);
+
+}
+
+#giftBox.open{
+
+animation:giftJump .8s;
+
+}
+
+@keyframes giftJump{
+
+0%{
+
+transform:scale(1);
+
+}
+
+40%{
+
+transform:scale(1.25) rotate(-10deg);
+
+}
+
+70%{
+
+transform:scale(.95);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}

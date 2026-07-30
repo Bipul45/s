@@ -462,12 +462,12 @@ console.log("❤️ Girlfriend Day Website Loaded Successfully ❤️");
 // ===============================
 
 const photos=[
-"assets/photo1.jpg",
-"assets/photo2.jpg",
-"assets/photo3.jpg",
-"assets/photo4.jpg",
-"assets/photo5.jpg",
-"assets/photo6.jpg"
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg",
+"photo5.jpg",
+"photo6.jpg"
 ];
 
 const lightbox=document.getElementById("lightbox");

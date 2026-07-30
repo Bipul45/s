@@ -1,4 +1,12 @@
 // ===============================
+// GLOBAL VARIABLES
+// ===============================
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+let playing = false;
+
+// ===============================
 // START
 // ===============================
 
@@ -51,8 +59,6 @@ behavior:"smooth"
 // ===============================
 // HEART
 // ===============================
-
-const heart=document.querySelector(".heart");
 
 heart.onclick=()=>{
 
@@ -283,57 +289,6 @@ celebrate();
 },700);
 
 };
-
-
-// ===============================
-// GALLERY ZOOM
-// ===============================
-
-document.querySelectorAll(".photo img").forEach(img=>{
-
-img.addEventListener("click",()=>{
-
-const overlay=document.createElement("div");
-
-overlay.style.position="fixed";
-
-overlay.style.left="0";
-
-overlay.style.top="0";
-
-overlay.style.width="100%";
-
-overlay.style.height="100%";
-
-overlay.style.background="rgba(0,0,0,.92)";
-
-overlay.style.display="flex";
-
-overlay.style.justifyContent="center";
-
-overlay.style.alignItems="center";
-
-overlay.style.zIndex="99999";
-
-const image=document.createElement("img");
-
-image.src=img.src;
-
-image.style.maxWidth="92%";
-
-image.style.maxHeight="92%";
-
-image.style.borderRadius="20px";
-
-overlay.appendChild(image);
-
-document.body.appendChild(overlay);
-
-overlay.onclick=()=>overlay.remove();
-
-});
-
-});
 
 // ===============================
 // SCROLL INDICATOR AUTO HIDE

@@ -1365,3 +1365,65 @@ transform:scale(1);
 }
 
 }
+
+/* ==========================
+   SNAP SCROLL
+========================== */
+
+html{
+
+scroll-snap-type:y mandatory;
+
+overflow-y:scroll;
+
+}
+
+section{
+
+scroll-snap-align:start;
+
+scroll-snap-stop:always;
+
+}
+
+
+/* ==========================
+   SMOOTH SCALE
+========================== */
+
+.section{
+
+transition:
+
+opacity 1s ease,
+
+transform 1s ease;
+
+}
+
+.section.active{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+.section{
+
+opacity:.4;
+
+transform:scale(.96);
+
+}
+
+
+/* ==========================
+   HERO PARALLAX
+========================== */
+
+.hero-content{
+
+transition:transform .3s linear;
+
+}

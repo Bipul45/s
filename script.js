@@ -74,49 +74,96 @@ behavior:"smooth"
 
 
 // ===============================
-// TYPING EFFECT
+// PREMIUM TYPING EFFECT
 // ===============================
 
-const message=`Thank you for making my life beautiful.
+const typingText=document.getElementById("typingText");
 
-You are the smile behind my happiness.
+const lines=[
 
-You are the peace inside my heart.
+"Dear My Love ❤️,",
 
-Every single day with you is my favourite memory.
+"",
 
-I promise to love you forever.
+"Thank you for making",
 
-Happy National Girlfriend Day ❤️`;
+"my life beautiful.",
 
-const typing=document.getElementById("typingText");
+"",
 
-let index=0;
-let started=false;
+"Every heartbeat",
 
-function typeText(){
+"whispers your name.",
 
-if(index<message.length){
+"",
 
-typing.innerHTML+=message.charAt(index);
+"You are my peace.",
 
-index++;
+"You are my happiness.",
 
-setTimeout(typeText,40);
+"You are my forever.",
+
+"",
+
+"I promise to love you",
+
+"today, tomorrow,",
+
+"and every single day.",
+
+"",
+
+"Happy National",
+
+"Girlfriend Day ❤️"
+
+];
+
+let line=0;
+let letter=0;
+let html="";
+
+function typeLine(){
+
+if(line>=lines.length) return;
+
+if(letter<lines[line].length){
+
+html+=lines[line].charAt(letter);
+
+typingText.innerHTML=html+"<span class='cursor'>|</span>";
+
+letter++;
+
+setTimeout(typeLine,55);
+
+}
+
+else{
+
+html+="<br>";
+
+line++;
+
+letter=0;
+
+setTimeout(typeLine,450);
 
 }
 
 }
 
-const typingObserver=new IntersectionObserver((entries)=>{
+const typingSection=document.querySelector(".typing");
+
+const typingObserver=new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
 
-if(entry.isIntersecting && !started){
+if(entry.isIntersecting){
 
-started=true;
+typingObserver.disconnect();
 
-typeText();
+typeLine();
 
 }
 
@@ -124,7 +171,7 @@ typeText();
 
 },{threshold:.5});
 
-typingObserver.observe(document.querySelector(".typing"));
+typingObserver.observe(typingSection);
 
 // ===============================
 // FLOATING HEARTS
@@ -568,3 +615,75 @@ hero.style.opacity=1-(y/450);
 hero.style.transform=`scale(${1+y/5000})`;
 
 });
+
+// ===============================
+// SNAP ACTIVE SECTION
+// ===============================
+
+const allSections=document.querySelectorAll("section");
+
+const activeObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}else{
+
+entry.target.classList.remove("active");
+
+}
+
+});
+
+},{
+threshold:.6
+});
+
+allSections.forEach(sec=>{
+
+activeObserver.observe(sec);
+
+});
+
+
+// ===============================
+// HERO PARALLAX
+// ===============================
+
+window.addEventListener("scroll",()=>{
+
+const y=window.scrollY;
+
+const heroContent=document.querySelector(".hero-content");
+
+heroContent.style.transform=`translateY(${y*0.25}px)`;
+
+});
+
+
+// ===============================
+// AUTO SCROLL INDICATOR
+// ===============================
+
+setInterval(()=>{
+
+const indicator=document.querySelector(".scroll-indicator");
+
+indicator.animate([
+
+{transform:"translateY(0px)"},
+
+{transform:"translateY(10px)"},
+
+{transform:"translateY(0px)"}
+
+],{
+
+duration:1200
+
+});
+
+},1500);

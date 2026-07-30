@@ -27,36 +27,11 @@ sections.forEach(sec=>observer.observe(sec));
 // BALLOON
 // ===============================
 
-const beginBtn=document.getElementById("beginBtn");
-
-beginBtn.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:window.innerHeight,
-
-behavior:"smooth"
-
-});
-
-const music=document.getElementById("bgMusic");
-
-music.play().catch(()=>{});
-
-});
-
-
-// ===============================
-// HEART
-// ===============================
-
 const heart=document.querySelector(".heart");
 
-heart.addEventListener("click",()=>{
+heart.onclick=()=>{
 
-heart.style.transform="scale(1.35)";
-
-heart.style.transition=".5s";
+heart.classList.add("open");
 
 setTimeout(()=>{
 
@@ -68,9 +43,34 @@ behavior:"smooth"
 
 });
 
-},600);
+},1000);
+
+};
+
+
+// ===============================
+// HEART
+// ===============================
+
+const heart=document.querySelector(".heart");
+
+heart.onclick=()=>{
+
+heart.classList.add("open");
+
+setTimeout(()=>{
+
+window.scrollBy({
+
+top:window.innerHeight,
+
+behavior:"smooth"
 
 });
+
+},1000);
+
+};
 
 
 // ===============================
@@ -180,33 +180,31 @@ document.body.appendChild(star);
 // MUSIC
 // ===============================
 
-const music=document.getElementById("bgMusic");
+musicBtn.onclick=()=>{
 
-const musicBtn=document.getElementById("musicBtn");
-
-let playing=false;
-
-musicBtn.addEventListener("click",()=>{
-
-if(!playing){
-
-music.play();
-
-musicBtn.innerHTML="⏸ Pause Music";
-
-playing=true;
-
-}else{
+if(playing){
 
 music.pause();
 
 musicBtn.innerHTML="▶ Play Music";
 
+musicBtn.classList.remove("music-playing");
+
 playing=false;
+
+}else{
+
+music.play();
+
+musicBtn.innerHTML="⏸ Pause Music";
+
+musicBtn.classList.add("music-playing");
+
+playing=true;
 
 }
 
-});
+};
 
 
 // ===============================

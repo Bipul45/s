@@ -1,511 +1,483 @@
-// ===============================
-// START
-// ===============================
+<!DOCTYPE html>
+<html lang="en">
 
-const sections = document.querySelectorAll(".section");
+<head>
 
-const observer = new IntersectionObserver((entries)=>{
+<meta charset="UTF-8">
 
-entries.forEach(entry=>{
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-if(entry.isIntersecting){
+<title>Happy National Girlfriend Day ❤️</title>
 
-entry.target.classList.add("show");
+<link rel="stylesheet" href="style.css">
 
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-});
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-},{
-threshold:0.25
-});
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-sections.forEach(sec=>observer.observe(sec));
+</head>
 
+<body>
 
-// ===============================
-// BALLOON
-// ===============================
 
-const beginBtn=document.getElementById("beginBtn");
+<!-- Floating Background -->
 
-beginBtn.addEventListener("click",()=>{
+<div id="stars"></div>
 
-window.scrollTo({
+<div id="hearts"></div>
 
-top:window.innerHeight,
 
-behavior:"smooth"
+<!-- Music -->
 
-});
+<audio id="bgMusic" loop>
 
-const music=document.getElementById("bgMusic");
+<source src="music.mp3" type="audio/mpeg">
 
-music.play().catch(()=>{});
+</audio>
 
-});
 
+<!-- Intro -->
 
-// ===============================
-// HEART
-// ===============================
+<section class="hero">
 
-const heart=document.querySelector(".heart");
+<div class="overlay"></div>
 
-heart.addEventListener("click",()=>{
+<div class="hero-content">
 
-heart.style.transform="scale(1.35)";
+<div class="balloon">
 
-heart.style.transition=".5s";
+🎈
 
-setTimeout(()=>{
+</div>
 
-window.scrollBy({
+<h1>
 
-top:window.innerHeight,
+Happy National Girlfriend Day
 
-behavior:"smooth"
+</h1>
 
-});
+<p>
 
-},600);
+Made With ❤️ By Satyam Singh
 
-});
+</p>
 
+<button id="beginBtn">
 
-// ===============================
-// TYPING EFFECT
-// ===============================
+Start Journey ❤️
 
-const message=`Thank you for making my life beautiful.
+</button>
 
-You are the smile behind my happiness.
+</div>
 
-You are the peace inside my heart.
+</section>
 
-Every single day with you is my favourite memory.
 
-I promise to love you forever.
 
-Happy National Girlfriend Day ❤️`;
+<!-- Heart Section -->
 
-const typing=document.getElementById("typingText");
+<section class="heart-section">
 
-let index=0;
-let started=false;
+<div class="heart-container">
 
-function typeText(){
+<div class="heart">
 
-if(index<message.length){
+❤️
 
-typing.innerHTML+=message.charAt(index);
+</div>
 
-index++;
+<h2>
 
-setTimeout(typeText,40);
+Open My Heart
 
-}
+</h2>
 
-}
+<p>
 
-const typingObserver=new IntersectionObserver((entries)=>{
+Tap the heart and start our beautiful journey.
 
-entries.forEach(entry=>{
+</p>
 
-if(entry.isIntersecting && !started){
+</div>
 
-started=true;
+<div class="scroll-indicator">
 
-typeText();
+↓
 
-}
+<br>
 
-});
+Scroll Down My Love
 
-},{threshold:.5});
+</div>
 
-typingObserver.observe(document.querySelector(".typing"));
+</section>
 
-// ===============================
-// FLOATING HEARTS
-// ===============================
+<!-- ================= WELCOME ================= -->
 
-setInterval(()=>{
+<section class="welcome section">
 
-const heart=document.createElement("div");
+<div class="container">
 
-heart.className="floating-heart";
+<h1>❤️ Happy National Girlfriend Day ❤️</h1>
 
-heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
+<p class="subtitle">
 
-heart.style.left=Math.random()*100+"vw";
+Every heartbeat of mine whispers your name.
 
-heart.style.fontSize=(20+Math.random()*25)+"px";
+</p>
 
-heart.style.animationDuration=(4+Math.random()*5)+"s";
+<p>
 
-document.body.appendChild(heart);
+You are the reason behind my smile, my peace,
+my happiness and every beautiful dream.
 
-setTimeout(()=>{
+I never knew love could feel this magical
+until you came into my life.
 
-heart.remove();
+</p>
 
-},9000);
+</div>
 
-},450);
+</section>
 
 
-// ===============================
-// STARS
-// ===============================
 
-for(let i=0;i<80;i++){
+<!-- ================= LOVE QUOTE ================= -->
 
-const star=document.createElement("div");
+<section class="quote section">
 
-star.className="star";
+<div class="container">
 
-star.style.left=Math.random()*100+"vw";
+<h2>
 
-star.style.top=Math.random()*100+"vh";
+💌 My Favourite Quote
 
-star.style.animationDelay=Math.random()*3+"s";
+</h2>
 
-document.body.appendChild(star);
+<blockquote>
 
-}
+"I don't need paradise because I found you.
 
+I don't need dreams because you're already my dream."
 
-// ===============================
-// MUSIC
-// ===============================
+</blockquote>
 
-const music=document.getElementById("bgMusic");
+</div>
 
-const musicBtn=document.getElementById("musicBtn");
+</section>
 
-let playing=false;
 
-musicBtn.addEventListener("click",()=>{
 
-if(!playing){
 
-music.play();
+<!-- ================= TYPING LETTER ================= -->
 
-musicBtn.innerHTML="⏸ Pause Music";
+<section class="typing section">
 
-playing=true;
+<div class="container">
 
-}else{
+<h2>
 
-music.pause();
+A Letter From My Heart ❤️
 
-musicBtn.innerHTML="▶ Play Music";
+</h2>
 
-playing=false;
+<p id="typingText"></p>
 
-}
+</div>
 
-});
+</section>
 
 
-// ===============================
-// GIFT BOX
-// ===============================
 
-const gift=document.getElementById("giftBox");
 
-const giftText=document.getElementById("giftText");
+<!-- ================= TIMELINE ================= -->
 
-gift.addEventListener("click",()=>{
+<section class="timeline-section section">
 
-gift.style.transform="scale(1.25) rotate(15deg)";
+<h1>
 
-gift.innerHTML="💖";
+❤️ Our Journey ❤️
 
-giftText.innerHTML="Surprise ❤️<br><br>I Love You Forever 🥹";
+</h1>
 
-});
+<div class="timeline">
 
+<div class="timeline-card">
 
-// ===============================
-// GALLERY ZOOM
-// ===============================
+<h2>
 
-document.querySelectorAll(".photo img").forEach(img=>{
+🌸 First Meet
 
-img.addEventListener("click",()=>{
+</h2>
 
-const overlay=document.createElement("div");
+<p>
 
-overlay.style.position="fixed";
+The day my world changed forever.
 
-overlay.style.left="0";
+</p>
 
-overlay.style.top="0";
+</div>
 
-overlay.style.width="100%";
+<div class="timeline-card">
 
-overlay.style.height="100%";
+<h2>
 
-overlay.style.background="rgba(0,0,0,.92)";
+💕 First Conversation
 
-overlay.style.display="flex";
+</h2>
 
-overlay.style.justifyContent="center";
+<p>
 
-overlay.style.alignItems="center";
+Hours felt like minutes with you.
 
-overlay.style.zIndex="99999";
+</p>
 
-const image=document.createElement("img");
+</div>
 
-image.src=img.src;
+<div class="timeline-card">
 
-image.style.maxWidth="92%";
+<h2>
 
-image.style.maxHeight="92%";
+❤️ I Fell In Love
 
-image.style.borderRadius="20px";
+</h2>
 
-overlay.appendChild(image);
+<p>
 
-document.body.appendChild(overlay);
+The moment I realised you're my forever.
 
-overlay.onclick=()=>overlay.remove();
+</p>
 
-});
+</div>
 
-});
+<div class="timeline-card">
 
-// ===============================
-// SCROLL INDICATOR AUTO HIDE
-// ===============================
+<h2>
 
-const scrollIndicator = document.querySelector(".scroll-indicator");
+🌍 Today
 
-window.addEventListener("scroll", () => {
+</h2>
 
-if(window.scrollY > 120){
+<p>
 
-scrollIndicator.style.opacity = "0";
+Still loving you more every single day.
 
-scrollIndicator.style.transform = "translateY(-20px)";
+</p>
 
-}else{
+</div>
 
-scrollIndicator.style.opacity = ".8";
+</div>
 
-scrollIndicator.style.transform = "translateY(0)";
+</section>
 
-}
+<!-- ================= MEMORY GALLERY ================= -->
 
-});
+<section class="gallery-section section">
 
+<div class="container">
 
-// ===============================
-// PARALLAX EFFECT
-// ===============================
+<h1>📸 Our Beautiful Memories</h1>
 
-window.addEventListener("scroll",()=>{
+<p>Every picture tells a story of us ❤️</p>
 
-let y = window.pageYOffset;
+<div class="gallery">
 
-document.querySelector(".hero").style.backgroundPositionY = y * 0.45 + "px";
+<div class="photo"><img src="assets/photo1.jpg" alt=""></div>
 
-});
+<div class="photo"><img src="assets/photo2.jpg" alt=""></div>
 
+<div class="photo"><img src="assets/photo3.jpg" alt=""></div>
 
-// ===============================
-// HEART GLOW
-// ===============================
+<div class="photo"><img src="assets/photo4.jpg" alt=""></div>
 
-window.addEventListener("scroll",()=>{
+<div class="photo"><img src="assets/photo5.jpg" alt=""></div>
 
-const value = window.scrollY / 15;
+<div class="photo"><img src="assets/photo6.jpg" alt=""></div>
 
-const heart = document.querySelector(".heart");
+</div>
 
-heart.style.filter = `drop-shadow(0 0 ${value}px #ff4f87)`;
+</div>
 
-});
+</section>
 
 
-// ===============================
-// BUTTON RIPPLE
-// ===============================
 
-document.querySelectorAll("button").forEach(button=>{
+<!-- ================= LONG LOVE LETTER ================= -->
 
-button.addEventListener("click",function(e){
+<section class="letter-section section">
 
-const ripple=document.createElement("span");
+<div class="container">
 
-const rect=this.getBoundingClientRect();
+<h1>💌 To My Favourite Person</h1>
 
-const size=Math.max(rect.width,rect.height);
+<div class="letter">
 
-ripple.style.width=size+"px";
+<p>
 
-ripple.style.height=size+"px";
+No matter where life takes us,
 
-ripple.style.left=(e.clientX-rect.left-size/2)+"px";
+I will always choose you.
 
-ripple.style.top=(e.clientY-rect.top-size/2)+"px";
+You are the smile behind my happiness,
 
-ripple.style.position="absolute";
+the peace behind my heart,
 
-ripple.style.borderRadius="50%";
+and the dream I never want to wake up from.
 
-ripple.style.background="rgba(255,255,255,.35)";
+Every single moment with you
 
-ripple.style.transform="scale(0)";
+is my favourite memory.
 
-ripple.style.animation="ripple .7s linear";
+Thank you for entering my life
 
-ripple.style.pointerEvents="none";
+and making everything beautiful.
 
-this.style.position="relative";
+I Love You Forever ❤️
 
-this.style.overflow="hidden";
+</p>
 
-this.appendChild(ripple);
+</div>
 
-setTimeout(()=>{
+</div>
 
-ripple.remove();
+</section>
 
-},700);
 
-});
 
-});
+<!-- ================= GIFT ================= -->
 
+<section class="gift-section section">
 
-// ===============================
-// FINAL CELEBRATION
-// ===============================
+<div class="container">
 
-function celebrate(){
+<h1>🎁 A Little Surprise</h1>
 
-for(let i=0;i<180;i++){
+<div id="giftBox">
 
-const item=document.createElement("div");
+🎁
 
-item.className="floating-heart";
+</div>
 
-item.innerHTML=["❤️","💖","💕","✨","🎉"][Math.floor(Math.random()*5)];
+<p id="giftText">
 
-item.style.left=Math.random()*100+"vw";
+Tap the gift to open your surprise ❤️
 
-item.style.fontSize=(18+Math.random()*28)+"px";
+</p>
 
-item.style.animationDuration=(2+Math.random()*4)+"s";
+<div id="giftSurprise">
 
-document.body.appendChild(item);
+<h2>💖 Surprise 💖</h2>
 
-setTimeout(()=>{
+<p>
+You are my favourite notification,
+my favourite smile,
+my favourite person,
+my favourite everything.
 
-item.remove();
+❤️ I Love You Forever ❤️
+</p>
 
-},7000);
+</div>
 
-}
+</div>
 
-}
+</section>
 
 
-// ===============================
-// FINAL PAGE
-// ===============================
 
-const finalSection=document.querySelector(".final-section");
+<!-- ================= MUSIC ================= -->
 
-const finalObserver=new IntersectionObserver((entries)=>{
+<section class="music-section section">
 
-entries.forEach(entry=>{
+<div class="container">
 
-if(entry.isIntersecting){
+<h1>🎵 Our Song</h1>
 
-celebrate();
+<p>
 
-}
+Every love story has a soundtrack...
 
-});
+This one is ours.
 
-},{threshold:.6});
+</p>
 
-finalObserver.observe(finalSection);
+<button id="musicBtn">
 
+▶ Play Music
 
-// ===============================
-// END
-// ===============================
+</button>
 
-console.log("❤️ Girlfriend Day Website Loaded Successfully ❤️");
+</div>
 
+</section>
 
-// ===============================
-// PREMIUM GALLERY
-// ===============================
 
-const photos=[
-"assets/photo1.jpg",
-"assets/photo2.jpg",
-"assets/photo3.jpg",
-"assets/photo4.jpg",
-"assets/photo5.jpg",
-"assets/photo6.jpg"
-];
 
-const lightbox=document.getElementById("lightbox");
+<!-- ================= FINAL ================= -->
 
-const lightboxImg=document.getElementById("lightboxImg");
+<section class="final-section section">
 
-let current=0;
+<div class="container">
 
-document.querySelectorAll(".photo img").forEach((img,index)=>{
+<h1 class="final-title">
 
-img.onclick=()=>{
+I LOVE YOU ❤️
 
-current=index;
+</h1>
 
-showImage();
+<p>
 
-};
+Happy National Girlfriend Day
 
-});
+My Forever,
 
-function showImage(){
+My Home,
 
-lightbox.classList.add("active");
+My Happiness.
 
-lightboxImg.src=photos[current];
+</p>
 
-}
+<h2>
 
-document.getElementById("closeLightbox").onclick=()=>{
+Thank You For Existing ❤️
 
-lightbox.classList.remove("active");
+</h2>
 
-};
+</div>
 
-document.getElementById("nextImg").onclick=()=>{
+</section>
 
-current++;
 
-if(current>=photos.length) current=0;
 
-showImage();
+<footer>
 
-};
+Made With ❤️ By Satyam Singh
 
-document.getElementById("prevImg").onclick=()=>{
+</footer>
 
-current--;
+<script src="script.js"></script>
 
-if(current<0) current=photos.length-1;
+<!-- Premium Lightbox -->
 
-showImage();
+<div id="lightbox">
 
-};
+<span id="closeLightbox">✕</span>
+
+<img id="lightboxImg">
+
+<div class="lightbox-nav">
+
+<button id="prevImg">❮</button>
+
+<button id="nextImg">❯</button>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+
